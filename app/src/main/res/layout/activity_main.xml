@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Title -->
+    <LinearLayout
+        android:id="@+id/titleContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="5dp"
+        android:background="@color/purple_700">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Animal Catalogue:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:id="@+id/animalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horse"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/orange"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <!-- Animal Image -->
+    <ImageView
+        android:id="@+id/imageAnimal"
+        android:layout_width="match_parent"
+        android:layout_height="259dp"
+        app:layout_constraintTop_toBottomOf="@+id/titleContainer"
+        android:scaleType="fitCenter"
+        android:src="@drawable/capybara" />
+
+    <!-- Animal Description -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        app:layout_constraintTop_toBottomOf="@id/imageAnimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="10dp">
+
+        <TextView
+            android:id="@+id/animalDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ever heard of a creature that looks like a guinea pig got super-sized and decided to take up yoga? That's the capybara for you! Capybaras are the ultimate socialites of the animal kingdom, forming tight-knit groups and casually hanging out in hot springs like they're having a spa day"
+            android:textSize="20sp"
+            android:textColor="@color/black" />
+    </ScrollView>
+
+    <!-- Buttons Above Horizontal Scroll -->
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/horizontalScroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/buttonPrevious"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Previous"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"/>
+    </LinearLayout>
+
+    <!-- Horizontal Scrollable Image Section -->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/imageContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Sample Images -->
+<!--            <ImageView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:src="@drawable/capybara" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:src="@drawable/chinchilla" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:src="@drawable/guinea_pig" />-->
+<!--            <ImageView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:src="@drawable/wombat" />-->
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
